@@ -15,13 +15,11 @@
 	  },
 	  methods: {
 	    handleNodeClick(e) {
-	      console.log(e);
 				this.$parent.get_con_data(e.id)
 	    },
 			get_tree(){
 				this.rq.requests.get('/aside').then(res => {
 					this.data = res.data;
-					console.log(this.data)
 				})
 			}
 	  },

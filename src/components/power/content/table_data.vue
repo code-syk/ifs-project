@@ -56,6 +56,9 @@
 			}
 		},
 		methods:{
+			test_data(){
+				console.log('aaa')
+			},
 			show_data(){
 				this.isActive = true;
 			},

@@ -68,18 +68,18 @@
 <style scoped="scoped">
 	@import '../../assets/css/base.css';
 	.power{
-		height:calc(100vh - 62px);
+		height:93vh;
 	}
 	#the_left{
 		background-color: pink;
 		float: left;
-		height: calc(100vh - 62px);
+		height: 100%;
 		width: 20vw;
 	}
 	#the_center{
 		background-color: burlywood;
 		float: left;
-		height: calc(100vh - 62px);
+		height: 100%;
 		width: 10px;
 	}
 	#the_right{
@@ -87,7 +87,7 @@
 		float: left;
 		overflow-y: scroll;
 		overflow-x: hidden;
-		height: calc(100vh - 62px);
+		height: 100%;
 		width:  calc(100vw - 38vw - 12px);
 		position: relative;
 	}

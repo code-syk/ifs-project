@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		html body{
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.app{
+			width: 100%;
+			height: 500px;
+		}
+		#the_left{
+			background-color: pink;
+			float: left;
+			height: 100%;
+			width: 300px;
+		}
+		#the_center{
+			background-color: burlywood;
+			float: left;
+			height: 100%;
+			width: 10px;
+		}
+		#the_right{
+			background-color: yellowgreen;
+			float: left;
+			height: 100%;
+			width:  800px;;
+		}
+		#head_right{
+			position: fixed;
+			width: 200px;
+			top: 25px;
+			right: 0;
+			background-color: yellowgreen;
+		}
+	</style>
+	<script type="text/javascript">
+		function get_width(e){
+			let mouse_x = e.pageX;
+			let move_left = document.getElementById("the_left");
+			let left_x = move_left.offsetWidth;
+			let move_center = document.getElementById("the_center");
+			let move_right = document.getElementById("the_right");
+			let right_x = move_right.offsetWidth;
+			document.onmousemove = function(e){
+				let move_x = e.pageX-mouse_x;
+				if(move_x<=200){
+					move_left.style.width = left_x+move_x+'px'
+					move_right.style.width = right_x-move_x+'px'
+					console.log(move_x)
+				}
+				
+			}
+			document.onmouseup = function(){
+				document.onmousemove = null;
+			}
+		
+		}
+	</script>
+	<body>
+		<div id="head_right">
+			<span>123</span>
+		</div>
+		<div class="app">
+			<div id="the_left"></div>
+			<div id="the_center" onmousedown="get_width(event)"></div>
+			<div id="the_right"></div>
+		</div>
+	</body>
+</html>
